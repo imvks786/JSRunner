@@ -30,7 +30,32 @@ var controls = {
         catch(e) {
             console.log(e);
         }
-    }    
+    },
+    copy_code:()=>{
+        navigator.clipboard.writeText(js_data).then(() => {
+            controls.notification(true, 'Code copied to clipboard!');
+        }).catch(err => {
+            console.error('Could not copy text: ', err);
+        });
+    },
+    theme_mode:(m)=>{
+        if(m == "L"){
+            $("#light_mode").hide();
+            $("#dark_mode").show();
+            $('body').removeClass('dark');
+            $('body').addClass('light');
+            $("#save_work,#clear_work,.auto_save,#copy_code").css('color','black');
+        }
+        else{
+            $("#dark_mode").hide();
+            $("#light_mode").show();
+            $("#save_work,#clear_work,.auto_save,#copy_code").css('color','white');
+            $('body').addClass('dark');
+            $('body').removeClass('light')
+        }
+    }
+
+
 }
 
 $(document).ready(()=>{
@@ -41,13 +66,14 @@ $(document).ready(()=>{
         }
     });
 
-    $("#themes").on('change',()=>{
-        controls.change_themes($("#themes").val()); 
-    })
 
 
+    $("#themes").on('change',()=>{ controls.change_themes($("#themes").val()); })
+    $("#copy_code").click(()=>{ controls.copy_code();});
     $("#save_work").click(()=>{ controls.save_work(); })
     $("#clear_work").click(()=>{ controls.clear_work(); })
+    $("#light_mode").click(()=>{ controls.theme_mode('L')});
+    $("#dark_mode").click(()=>{ controls.theme_mode('D')});
 })
 
 //===========CODE RUNNER===============//

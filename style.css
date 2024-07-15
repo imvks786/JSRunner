@@ -1,8 +1,33 @@
+
 body{
-    background: #272822 !important;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif !important;
     h4{
         color: white;
+    }
+}
+
+.dark{
+    background-color: #272822 !important;
+    transition: background-color 1s;
+}
+.light{
+    transition: background-color 1s;
+    h4,p,.auto_msg{
+        color: black;
+    }
+}
+
+.modes{
+    float: right;
+    #light_mode{
+        font-size: 35px;
+        display: block;
+        cursor: pointer;
+    }
+    #dark_mode{
+        font-size: 35px;
+        display: none;
+        cursor: pointer;
     }
 }
 
@@ -39,7 +64,7 @@ body{
     height: 65px;
 }
 
-#save_work,#clear_work,.auto_save{
+#save_work,#clear_work,.auto_save,#copy_code{
     display: inline-flex;
     color: white;
     cursor: pointer;
