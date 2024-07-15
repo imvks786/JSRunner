@@ -1,0 +1,188 @@
+body{
+    background: #272822 !important;
+    font-family: "Poppins", sans-serif;
+    h4{
+        color: white;
+    }
+}
+
+#editor {
+    height: 500px; /* Adjust height as needed */
+    width: 100%;
+    border: 1px solid gray;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 15px;
+}
+
+.output{
+    border: 1px solid gray;
+    padding: 10px;
+    white-space: pre-wrap; /* Preserve whitespace */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    height: 500px;
+    background: black;
+    color: white;
+    border-radius: 15px;
+    overflow-y: scroll;
+}
+
+.header{
+    box-shadow: 0px 0px 20px 0px #c3e6ad;
+    text-align: center;
+    background: #272822;
+    color: white;  
+    padding: 10px;
+    font-size: 25px;
+    height: 65px;
+}
+
+#save_work,#clear_work,.auto_save{
+    display: inline-flex;
+    color: white;
+    cursor: pointer;
+    &:hover{
+        color: gray;
+    }
+}
+
+.check{
+    margin-right: 5px;
+}
+
+#notify{
+    display: none;
+    overflow: hidden;
+}
+#close_btn{
+    margin-left: 25px;
+}
+.notification_content {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+.notification{
+    display: block;
+    position: fixed;
+    right: 10px;
+    top: 100px;
+    border-radius: 25px;
+    background-color: #9fd7a1;
+    p{
+        margin: 0px;
+        color: black !important;
+    }
+}
+
+.line {
+    width: 100%;
+    height: 4px;
+    background-color: #407642;
+    position: relative;
+    animation: decreaseWidth 4.8s linear forwards;
+}
+@keyframes decreaseWidth {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+.error_{
+    color: red;
+    background-color: rgb(64 33 33);
+}
+.footer{
+    text-align: center;
+    margin-top: 100px;
+    border: 1px solid gray;
+    color: white;
+    p{
+        margin: 0px;
+    }
+}
+.controls{
+    gap: 10px;
+    display: flex;
+    padding: 10px;
+    margin-top: 45px;
+    margin-bottom: 30px;
+    border: 1px solid gray;
+    border-radius: 25px;
+}
+.logo{
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin: auto;
+}
+.ylw{
+    color: yellow;
+    font-size: 20px;
+}
+
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+/* Apply the rotation animation to the icon */
+.auto_save {
+    display: inline-block; /* Ensures it can be transformed */
+}
+.auto_msg{
+    display: none;
+    color: white;
+}
+.rotate_auto_save {
+    animation: rotate 2s linear infinite; /* Rotate continuously */
+}
+
+
+
+
+.ace_scrollbar-v::-webkit-scrollbar {
+    width: 10px !important;  
+}        
+.ace_scrollbar-v::-webkit-scrollbar-track {
+    background-color: #272822 !important;
+}
+.ace_scrollbar-v::-webkit-scrollbar-thumb {
+    background-color: #888 !important; 
+}
+.ace_scrollbar-v::-webkit-scrollbar-thumb:hover {
+    background: #5555; 
+}
+
+
+#output::-webkit-scrollbar {
+    width: 10px !important;  
+}        
+#output::-webkit-scrollbar-track {
+    background-color: #272822 !important;
+}
+#output::-webkit-scrollbar-thumb {
+    background-color: #888 !important; 
+}
+#output::-webkit-scrollbar-thumb:hover {
+    background: #5555; 
+}
+
+
+body::-webkit-scrollbar {
+    display: none !important;
+}
+.ace_scrollbar-h{
+    overflow: hidden !important;;
+}
