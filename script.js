@@ -159,7 +159,7 @@ $(document).ready(()=>{
     try{
        js_data =  localStorage.getItem('JS_DATA');
        if(!js_data) {
-            js_data= `// CODE HERE;`;
+            js_data= `// Online Javascript Editor for free`;
         }
     }
     catch(e){
@@ -168,4 +168,15 @@ $(document).ready(()=>{
 
     editor.session.setValue(js_data);
     editor.focus();
+});
+
+
+//==============PRELOADER=============//
+document.addEventListener("DOMContentLoaded", function() {
+    const preloader = document.getElementById('preloader');
+    const content = document.getElementById('content');
+    window.onload = function() {
+        preloader.style.display = 'none';
+        content.style.display = 'block';
+    };
 });
